@@ -1,21 +1,28 @@
-const initial_state = {}
+const initial_state = {
+  usersArray: [],
+}
 
-const users = (state = initial_state, action) => {
+export default (state = initial_state, action) => {
   switch (action.type) {
     case 'ADD_USER':
+
+      let newUsers = state.usersArray
+      
       return {
-        ...state, 
-        name: action.name, 
-        id: action.id 
+        ...state,
+        usersArray: newUsers.concat([
+          {
+            name: action.name, 
+            id: action.id
+          }
+        ])
       }
     case 'USERS_LIST':
       return {
         ...state,
-        users: action.users
+        //users: action.users
       }
     default:
       return state
   }
 }
-  
-  export default users

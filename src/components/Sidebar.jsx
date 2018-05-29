@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const Sidebar = ({ users }) => (
+const Sidebar = ({ usersArray }) => (
   <aside id="sidebar" className="sidebar">
     <ul>
       {
-        users.map(user => (
+        usersArray.map(user => (
             <li key={user.id}>{user.name}</li>
             )
         )
@@ -15,7 +15,7 @@ const Sidebar = ({ users }) => (
 )
 
 Sidebar.propTypes = {
-  users: PropTypes.arrayOf(
+  usersArray: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

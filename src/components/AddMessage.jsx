@@ -9,7 +9,7 @@ const AddMessage = (props) => {
       <input
         onKeyPress={(e) => {
         if (e.key === 'Enter') {
-          props.dispatch(input.value, 'Me')
+          props.addMessage(input.value, 'Me')
           input.value = ''
         }
       }}
@@ -23,7 +23,7 @@ const AddMessage = (props) => {
 }
 
 AddMessage.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  addMessage: PropTypes.func.isRequired
 }
 
 export default AddMessage

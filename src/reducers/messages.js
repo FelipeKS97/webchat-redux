@@ -1,19 +1,24 @@
-const initial_state = {}
+const initial_state = {
+  messagesArray: []
+}
 
-const messages = (state = initial_state, action) => {
+export default (state = initial_state, action) => {
     switch (action.type) {
       case 'ADD_MESSAGE':
       case 'MESSAGE_RECEIVED':
-        return {
+        let newMessages = state.messagesArray
+          return {
             ...state,
-            message: action.message,
-            author: action.author,
-            id: action.id
+            messagesArray: newMessages.concat([
+              {
+                message: action.message,
+                author: action.author,
+                id: action.id
+              }
+            ])
           }
       
       default:
-        return state
+        return {...state}
     }
   }
-  
-  export default messages

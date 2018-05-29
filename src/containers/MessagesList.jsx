@@ -1,7 +1,9 @@
 import { connect } from 'react-redux'
 import MessagesListComponent from '../components/MessagesList'
 
-export const MessagesList = connect(
-    state => ({
-        messages: state.messages
-    }), null)(MessagesListComponent)
+
+const mapStateToProps = state => ({
+    messages: state.messages.messagesArray
+})
+
+export const MessagesList = connect(mapStateToProps, null)(MessagesListComponent)
