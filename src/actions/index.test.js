@@ -1,7 +1,7 @@
 import { addMessage, addUser } from "../actions"
 
 
-describe('adding a message', ()=> {
+describe('adding a message', () => {
     it("should create an action to add a message with id 0", ()=> {
         const message = "Something"
         const action = {

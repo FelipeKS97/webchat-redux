@@ -10,12 +10,12 @@ export default (state = initial_state, action) => {
       
       return {
         ...state,
-        usersArray: newUsers.concat([
+        usersArray: [...newUsers,
           {
             name: action.name, 
             id: action.id
           }
-        ])
+        ]
       }
     case 'USERS_LIST':
       return {

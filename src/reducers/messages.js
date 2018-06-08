@@ -9,13 +9,13 @@ export default (state = initial_state, action) => {
         let newMessages = state.messagesArray
           return {
             ...state,
-            messagesArray: newMessages.concat([
+            messagesArray: [ ...newMessages,
               {
                 message: action.message,
                 author: action.author,
                 id: action.id
               }
-            ])
+            ]
           }
       
       default:
