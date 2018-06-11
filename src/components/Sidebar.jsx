@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import propTypes from "prop-types"
 
 const Sidebar = ({ usersArray }) => (
   <aside id="sidebar" className="sidebar">
@@ -14,13 +14,13 @@ const Sidebar = ({ usersArray }) => (
   </aside>
 )
 
-Sidebar.propTypes = {
-  usersArray: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired
-}
+// Sidebar.propTypes = {
+//   usersArray: propTypes.arrayOf(
+//     propTypes.shape({
+//       id: propTypes.number.isRequired,
+//       name: propTypes.string.isRequired,
+//     }).isRequired
+//   ).isRequired
+// }
 
 export default Sidebar

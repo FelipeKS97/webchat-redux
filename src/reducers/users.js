@@ -5,12 +5,10 @@ const initial_state = {
 export default (state = initial_state, action) => {
   switch (action.type) {
     case 'ADD_USER':
-
-      let newUsers = state.usersArray
       
       return {
         ...state,
-        usersArray: [...newUsers,
+        usersArray: [...state.usersArray,
           {
             name: action.name, 
             id: action.id
@@ -18,9 +16,10 @@ export default (state = initial_state, action) => {
         ]
       }
     case 'USERS_LIST':
+    console.log(action)
       return {
         ...state,
-        //users: action.users
+        usersArray: [...state.usersArray, action.users]
       }
     default:
       return state
